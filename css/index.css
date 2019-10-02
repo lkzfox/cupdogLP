@@ -13,4 +13,141 @@ body {
 
 .header {
     height: 90vh;
+    background-image: linear-gradient(#444444cc, #444444cc ), url('../image/cupdog-black.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.logo__image {
+    height: 100px;
+}
+
+.heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    backface-visibility: hidden;
+    text-align: center;
+}
+
+.heading__main {
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-name: moveFromLeft;
+    display: block;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+.heading__sub {
+    display: block;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-name: moveFromRight;
+    margin-bottom: 20px;
+}
+
+.btn:visited,
+.btn:link {
+    text-decoration: none;
+    padding: 5px 50px;
+    display: inline-block;
+    border-radius: 30%;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #00000030;
+}
+
+.btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px #00000030;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #101010;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    content: "";
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveFromBottom .3s ease-out .7s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    70% {
+        transform: translateX(20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    70% {
+        transform: translateX(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
