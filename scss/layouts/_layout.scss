@@ -1,0 +1,19 @@
+
+.header {
+    height: 90vh;
+    background-image: linear-gradient($color-gray-medium-t80, $color-gray-medium-t80 ), url('../image/cupdog-black.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+    &__logo {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+    }
+
+    &__logo-image {
+        height: 10rem;
+    }
+
+}

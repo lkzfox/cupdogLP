@@ -1,153 +1,124 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@keyframes moveFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  70% {
+    transform: translateX(2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  70% {
+    transform: translateX(-2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
 
 body {
-    font-family: 'Atma', cursive;
-    background-color: black;
-    color: white;
-    padding: 30px;
-}
+  box-sizing: border-box; }
 
-.header {
-    height: 90vh;
-    background-image: linear-gradient(#444444cc, #444444cc ), url('../image/cupdog-black.jpeg');
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.logo__image {
-    height: 100px;
-}
+body {
+  font-family: 'Atma', cursive;
+  background-color: black;
+  color: #fff;
+  padding: 3rem; }
 
 .heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    backface-visibility: hidden;
-    text-align: center;
-}
-
-.heading__main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  backface-visibility: hidden;
+  text-align: center; }
+  .heading--main {
     animation-duration: 0.8s;
     animation-timing-function: ease-out;
     animation-name: moveFromLeft;
     display: block;
-    font-size: 60px;
-    letter-spacing: 2px;
-}
-
-.heading__sub {
+    font-size: 6rem;
+    letter-spacing: .2rem; }
+  .heading--sub {
     display: block;
     animation-duration: 0.8s;
     animation-timing-function: ease-out;
     animation-name: moveFromRight;
-    margin-bottom: 20px;
-}
+    margin-bottom: 2rem;
+    font-size: 3rem; }
 
-.btn:visited,
-.btn:link {
-    text-decoration: none;
-    padding: 5px 50px;
-    display: inline-block;
-    border-radius: 30%;
-    transition: all .2s;
-    position: relative;
-}
+.header {
+  height: 90vh;
+  background-image: linear-gradient(#444c, #444c), url("../image/cupdog-black.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative; }
+  .header__logo {
+    position: absolute;
+    top: 3rem;
+    left: 3rem; }
+  .header__logo-image {
+    height: 10rem; }
+
+.btn:visited, .btn:link {
+  text-decoration: none;
+  padding: .5rem 5rem;
+  display: inline-block;
+  border-radius: 30%;
+  transition: all .2s;
+  position: relative;
+  font-size: 2.5rem; }
 
 .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px #00000030;
-}
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem #00000030; }
+  .btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0; }
 
 .btn:active {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px #00000030;
-}
+  transform: translateY(-0.2rem);
+  box-shadow: 0 .5rem 1rem #00000030; }
 
-.btn-white {
-    background-color: #fff;
-    color: #101010;
-}
+.btn--white {
+  background-color: #fff;
+  color: #101010; }
+  .btn--white::after {
+    content: "";
+    background-color: #fff; }
 
 .btn::after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 30%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
-.btn-white::after {
-    content: "";
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scale(1.5);
-    opacity: 0;
-}
-
-.btn-animated {
-    animation: moveFromBottom .3s ease-out .7s;
-    animation-fill-mode: backwards;
-}
-
-@keyframes moveFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    70% {
-        transform: translateX(20px)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveFromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    70% {
-        transform: translateX(-20px)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveFromBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+.btn--animated {
+  animation: moveFromBottom .3s ease-out .7s;
+  animation-fill-mode: backwards; }
