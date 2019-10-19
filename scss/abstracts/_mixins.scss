@@ -1,0 +1,36 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+        width: 100%;
+    }
+}
+/*
+    phone - 600px
+    t-port - 900px
+    t-land - 1200px
+    b-desk - 1800px+
+*/
+@mixin convert($media) {
+    @if $media == phone {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+    @if $media == t-port {
+        @media (max-width: 900px) {
+            @content;
+        }
+    }
+    @if $media == t-land {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @if $media == b-desk {
+        @media (max-width: 1800px) {
+            @content;
+        }
+    }
+}

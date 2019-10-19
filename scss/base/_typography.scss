@@ -1,6 +1,6 @@
 body {
     font-family: 'Atma', cursive;
-    background-color: black;
+    background-color: $color-gray-medium;
     color: $color-white;
     padding: 3rem;
 }
@@ -20,6 +20,13 @@ body {
         display: block;
         font-size: 6rem;
         letter-spacing: .2rem;
+        margin-bottom: 4rem;
+
+        @include convert(phone) {
+            font-size: 4rem;
+            letter-spacing: .1rem;
+            margin-bottom: 2rem;
+        };
     }
     
     &--sub {
@@ -31,4 +38,8 @@ body {
         font-size: 3rem;
     }
     
+}
+
+.heading-flavor {
+    font-size: 4rem;
 }

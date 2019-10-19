@@ -1,0 +1,109 @@
+.heading-secondary {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.card-flavor {
+    height: 70rem;
+    position: relative;
+    overflow: hidden;
+    
+    @include convert(t-port) {
+        height: auto;
+        padding-bottom: 2rem;
+    };
+
+    &__heading {
+        font-size: 4rem;
+        letter-spacing: .2rem;
+        padding: 6rem 0 0rem 0;
+        text-align: center;
+        
+        @include convert(t-port) {
+            padding: 3rem 0 0 0;
+        };
+
+        & > span {
+            display: block;
+            text-align: right;
+        }
+
+        &--traditional {
+            background-image: linear-gradient(to right, $color-white-t80, $color-gray-medium-t80), url('../image/cupdog-background.png');
+            width: 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+        }
+
+        &--cupdog {
+            padding: 0 4rem;
+        }
+
+        &--flavor {
+            padding: 0 2rem;
+        }
+    }
+
+    &__price {
+        background-color: $color-yellow;
+        box-shadow: .2rem .1rem .5rem $color-shadow;
+        font-size: 4rem;
+        left: -40rem;
+        letter-spacing: .3rem;
+        position: absolute; 
+        text-align: center;
+        text-shadow: 0 .3rem .6rem $color-shadow;
+        top: 5rem;
+        transform: rotate(-40deg);
+        width: 100rem;
+
+        &--currency {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &__ingredients ul {
+        list-style: none;
+        text-align: center;
+        font-size: 3rem;
+        letter-spacing: .3rem;
+
+        & li {
+            margin: 0 auto;
+            padding: 1rem 0;
+            width: 60%;
+        }
+
+        & li:not(:last-child) {
+            border-bottom: .2rem solid $color-white;
+        }
+    }
+}
+
+.top {
+    background-color: $color-gray-dark;
+    padding: 20rem 0 3rem 0;
+    transform: skewY(3deg) translateY(-20rem);
+
+    & > * {
+        transform: skewY(-3deg);
+    }
+}
+
+.menu {
+    background-color: $color-gray-dark;
+    padding: 10rem 0;
+    transform: skewY(-3deg);
+
+    & > * {
+        transform: skewY(3deg);
+    }
+
+    
+    @include convert(t-port) {
+        padding: 10rem 3rem;
+    };
+}

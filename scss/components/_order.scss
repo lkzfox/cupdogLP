@@ -1,0 +1,13 @@
+.order {
+    font-weight: 600;
+    letter-spacing: .1rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 5000;
+
+    & i {
+        font-size: inherit;
+        color: inherit;
+    }
+}
